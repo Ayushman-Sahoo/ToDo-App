@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <h1 class="todo-title">Todo List</h1>
+
+  <div class="search-bar-wrapper">
+    <input type="text" id="search-input" placeholder="Search todos..." />
+  </div>
+
+  <div class="input-wrapper">
+    <div class="grid-container">
+      <input type="text" id="todo-input" placeholder="Enter Todo here" />
+
+      <!-- ✅ Modified input to support typing + pattern validation -->
+      <input type="text" id="todo-date" placeholder="Enter date (e.g., 2025-08-01 or August 1, 2025)"/>
+
+      <button class="btn-todo">Add</button>
+    </div>
+  </div>
+
+  <div class="todo-container" id="todo-container"></div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
