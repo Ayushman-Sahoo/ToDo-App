@@ -61,7 +61,7 @@ function saveTodos() {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-// Render todos
+// Render todos and update stats
 function renderTodos(searchTerm = '') {
   const container = document.getElementById('todo-container');
   container.innerHTML = '';
@@ -108,4 +108,20 @@ function renderTodos(searchTerm = '') {
 
       container.appendChild(card);
     });
+
+  renderStats();
+}
+
+// ✅ Render task stats
+function renderStats() {
+  const total = todos.length;
+  const completed = todos.filter(todo => todo.completed).length;
+  const remaining = total - completed;
+
+  const statsDiv = document.getElementById('todo-stats');
+  statsDiv.innerHTML = `
+    <strong>Total:</strong> ${total} |
+    <strong>Completed:</strong> ${completed} |
+    <strong>Remaining:</strong> ${remaining}
+  `;
 }
