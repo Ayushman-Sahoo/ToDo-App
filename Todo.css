@@ -147,3 +147,14 @@ button:hover {
   /* Adjust margin for alignment (can fine-tune as needed) */
   margin-left: 5px; /* Adjust this value if it needs more spacing from buttons */
 }
+
+.todo-stats {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
