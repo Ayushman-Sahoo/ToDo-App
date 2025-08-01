@@ -118,7 +118,7 @@ function renderTodos(search = '') {
       renderTodos(); // re-render all todos
     });
 
-    // Edit
+    // ✅ Fixed Edit (edited here)
     card.querySelector('.btn-edit').addEventListener('click', () => {
       const newTask = prompt('Edit task:', todo.task);
       const newRawDate = prompt('Edit date (YYYY-MM-DD):', convertToInputDate(todo.date));
@@ -127,7 +127,8 @@ function renderTodos(search = '') {
         todo.task = newTask.trim();
         todo.date = formatDate(newRawDate);
         saveTodos();
-        renderTodos(search);
+        document.getElementById('search-input').value = ''; // Clear search input
+        renderTodos(); // Full refresh
       } else {
         alert("Invalid date format.");
       }
