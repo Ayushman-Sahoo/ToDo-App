@@ -2,29 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Todo App</title>
   <link rel="stylesheet" href="todo.css" />
 </head>
 <body>
+
+  <!-- 🔹 App Title -->
   <h1 class="todo-title">Todo List</h1>
 
+  <!-- 🔹 Search and Filter Bar -->
   <div class="search-bar-wrapper">
-    <input type="text" id="search-input" placeholder="Search todos..." />
+    <input type="text" id="search-input" placeholder="🔍 Search task..." />
+    <select id="filter-select">
+      <option value="all">🔎 All</option>
+      <option value="completed">✅ Completed</option>
+      <option value="incomplete">📋 Incomplete</option>
+      <option value="today">📅 Due Today</option>
+    </select>
   </div>
 
+  <!-- 🔹 Input Section -->
   <div class="input-wrapper">
     <div class="grid-container">
-      <input type="text" id="todo-input" placeholder="Enter Todo here" />
-      <input type="text" id="todo-date" placeholder="Enter date (e.g., 2025-08-01 or August 1, 2025)" />
-      <button class="btn-todo">Add</button>
+      <input type="text" id="todo-input" placeholder="✏️ Enter task" />
+      <input type="text" id="todo-date" placeholder="📅 YYYY-MM-DD or pick date" onfocus="(this.type='date')" onblur="if(this.value==='')this.type='text'" />
+      <button class="btn-todo">➕ Add</button>
     </div>
   </div>
 
+  <!-- 🔹 Todo Cards Container -->
   <div class="todo-container" id="todo-container"></div>
 
-  <!-- ✅ Added Stats Container -->
+  <!-- 🔹 Stats Section -->
   <div class="todo-stats" id="todo-stats"></div>
 
+  <!-- 🔹 External JavaScript -->
   <script src="todo.js"></script>
 </body>
 </html>
